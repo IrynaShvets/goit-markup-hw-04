@@ -36,19 +36,17 @@ header {
   border-bottom: 1px solid #ececec;
 }
 
-.conteiner {
+.container {
   margin-left: auto;
   margin-right: auto;
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-
-  border: 1px solid red;
 }
 
 /* Навигация хедера */
 
-.header-conteiner {
+.header-container {
   display: flex;
   align-items: center;
 }
@@ -133,10 +131,9 @@ header {
   color: var(--selection-color);
 }
 
-.contact:hover svg,
-.contact:focus svg {
+.contact:hover .icon,
+.contact:focus .icon {
   fill: var(--selection-color);
-  cursor: pointer;
 }
 
 .contact-list {
@@ -147,12 +144,7 @@ header {
 
 .icon {
   margin-right: 10px;
-  fill: currentColor;
-}
-
-.icon:hover,
-.icon:focus {
-  fill: var(--selection-color);
+  fill: var(--secondary-text-color);
 }
 
 /* Герой */
@@ -185,12 +177,20 @@ header {
   margin-right: auto;
   margin-left: auto;
   background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2),
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/hero.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .hero-title {
@@ -226,6 +226,9 @@ header {
 .button:focus {
   color: #ffffff;
   background: var(--selection-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 
 .hero-button {
@@ -271,7 +274,7 @@ header {
 }
 
 .strategy-title {
-  margin-top: 0;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-size: 14px;
   line-height: 1.14;
@@ -355,17 +358,6 @@ img {
   text-align: center;
 }
 
-.join-title {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
 .command-name {
   margin-top: 0;
   margin-bottom: 10px;
@@ -388,7 +380,6 @@ img {
 .icon-link:hover svg,
 .icon-link:focus svg {
   fill: #ffffff;
-  cursor: pointer;
 }
 
 .icon-link:hover {
@@ -417,16 +408,6 @@ img {
   margin-bottom: 30px;
 }
 
-.clients-link {
-  width: 106px;
-  height: 60px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  fill: #afb1b8;
-}
-
 .clients-list {
   display: flex;
   justify-content: center;
@@ -448,14 +429,21 @@ img {
   fill: #afb1b8;
   width: 170px;
   height: 92px;
-  display: block;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/*padding: 0;
-justify-content: center;
-  align-items: center;
-*/
+.clients-link:hover svg,
+.clients-link:focus svg {
+  fill: var(--selection-color);
+}
+
+.clients-item:hover,
+.clients-item:hover {
+  border-color: var(--selection-color);
+}
 
 /* Фильтеры */
 
@@ -474,6 +462,11 @@ justify-content: center;
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+}
+
+.filter-list:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .filter-buttons .filter-btn + .filter-btn {
@@ -537,6 +530,11 @@ justify-content: center;
   background-color: #2f303a;
 }
 
+.footers-container {
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer-studio {
   color: #ffffff;
 }
@@ -552,7 +550,6 @@ justify-content: center;
   color: #ffffff;
 }
 
-/*margin-top: 20px;*/
 .address-list {
   margin-bottom: 9px;
 }
@@ -567,12 +564,27 @@ justify-content: center;
   color: var(--selection-color);
 }
 
-.join {
+.join-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin-left: 70px;
 }
+
 .join-link {
-  padding-left: 10px;
+  margin-left: 10px;
+}
+
+.join-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .join-icon {
@@ -583,6 +595,20 @@ justify-content: center;
   align-items: center;
   justify-content: center;
   fill: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.join-icon:hover svg,
+.join-icon:focus svg {
+  fill: #ffffff;
+}
+
+.join-icon:hover {
+  background-color: var(--selection-color);
+}
+
+.join-link:first-child {
+  margin-left: 0;
 }
 
 .join-links {
