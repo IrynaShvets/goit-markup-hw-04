@@ -132,12 +132,12 @@ header {
 .contact:focus {
   color: var(--selection-color);
 }
-/*
-.icon-envelope {
-  width: 16px;
-  height: 12px;
 
-}*/
+.contact:hover svg,
+.contact:focus svg {
+  fill: var(--selection-color);
+  cursor: pointer;
+}
 
 .contact-list {
   display: flex;
@@ -355,6 +355,17 @@ img {
   text-align: center;
 }
 
+.join-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
 .command-name {
   margin-top: 0;
   margin-bottom: 10px;
@@ -372,6 +383,16 @@ img {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
+}
+
+.icon-link:hover svg,
+.icon-link:focus svg {
+  fill: #ffffff;
+  cursor: pointer;
+}
+
+.icon-link:hover {
+  background-color: var(--selection-color);
 }
 
 .command-link {
@@ -430,13 +451,8 @@ img {
   display: block;
   cursor: pointer;
 }
-/*
-.clients-link .clients-icon:hover {
-  fill: var(--selection-color);
 
-
-}
-padding: 0;
+/*padding: 0;
 justify-content: center;
   align-items: center;
 */
@@ -549,4 +565,29 @@ justify-content: center;
 .address-contact:hover,
 .address-contact:focus {
   color: var(--selection-color);
+}
+
+.join {
+  display: flex;
+  align-items: center;
+}
+.join-link {
+  padding-left: 10px;
+}
+
+.join-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: #ffffff;
+}
+
+.join-links {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
